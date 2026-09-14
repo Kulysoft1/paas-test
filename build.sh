@@ -11,3 +11,4 @@ uv sync --frozen
 # Run Django deployment commands
 uv run python manage.py collectstatic --no-input
 uv run python manage.py migrate
+uv run python manage.py createsuperuser --username admin --email admin@admin.org --noinput || true
