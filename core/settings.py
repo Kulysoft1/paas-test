@@ -24,27 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0q!!^t1&5d#m%&et2hqly$!7-k-6nsj)$46sxik)mik600^2#z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.railway.app', '.onrender.com']
-railway_domain = os.environ.get('RAILWAY_PUBLIC_DOMAIN')
-if railway_domain:
-    ALLOWED_HOSTS.append(railway_domain)
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-    'https://*.railway.app',
-    'https://*.onrender.com',
-]
-
-render_domain = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if render_domain:
-    ALLOWED_HOSTS.append(render_domain)
-    CSRF_TRUSTED_ORIGINS.append(f'https://{render_domain}')
-
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
