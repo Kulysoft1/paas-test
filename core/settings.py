@@ -93,6 +93,10 @@ DATABASES = {
     )
 }
 
+# Fallback safety check if DATABASE_URL was parsed with an empty NAME
+if not DATABASES['default'].get('NAME'):
+    DATABASES['default']['NAME'] = 'railway'
+
 REDIS_URL = os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379/1')
 CACHES = {
     'default': {
