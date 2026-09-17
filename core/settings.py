@@ -83,7 +83,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        engine='django.db.backends.postgresql',conn_max_age=600,
+        engine='django.db.backends.postgresql',
+        conn_max_age=600,
         conn_health_checks=True,
     )
 }
